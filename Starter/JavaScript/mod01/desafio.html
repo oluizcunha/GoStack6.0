@@ -1,0 +1,67 @@
+<html>
+
+<head>
+    <title>
+        Cursozinho
+    </title>
+</head>
+
+<body>
+    <script>
+        // 1
+        var endereco = {
+            rua: "Rua dos pinheiros",
+            numero: 1293,
+            bairro: "Centro",
+            cidade: "São Paulo",
+            uf: "SP"
+        };
+
+        function retorna(endereco) {
+            console.log("O usuário mora em " + endereco.cidade + ", no bairro " + endereco.bairro + ", na rua " + endereco.rua + " com no " + endereco.numero + ".");
+        }
+        retorna(endereco);
+
+        // 2
+
+        function pares(x, y) {
+            while (x <= y) {
+                if (x % 2 === 0) {
+                    console.log(x);
+                }
+                x += 1;
+            }
+        }
+        pares(32, 322);
+
+
+        // 3
+        function temHabilidade(skills) {
+            console.log(skills.indexOf("Javascript") > -1)
+        }
+        var skills = ["Javascript", "ReactJS", "React Native"];
+        temHabilidade(skills); // true ou false
+
+        // 4
+
+        function experiencia(anos) {
+            if (anos > 7)
+                console.log("Jedi Master");
+            else if (anos > 3)
+                console.log("Avançado ");
+            else if (anos > 1)
+                console.log("intermediario");
+            else
+                console.log("iniciante");
+
+        }
+        var anosEstudo = 2;
+        experiencia(anosEstudo);
+
+
+
+
+    </script>
+</body>
+
+</html>
