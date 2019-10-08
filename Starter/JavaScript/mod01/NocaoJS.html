@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>
+        Cursozinho
+    </title>
+</head>
+
+<body>
+    <script>
+        console.log("www");
+
+        var sexo = 'm';
+        // If in line
+        var retorno = (sexo === 'm') ? 'Masculino' : 'Feminino';
+        console.log(retorno);
+
+
+        //Definindo intervalo de execução
+        function printalgo() {
+            console.log("Printei");
+        }
+
+        //Se colocar () na função, ele executa apenas uma vez. Porque esta passando a chamada da função, se coloca sem ele passa a função toda como parametro.
+        setInterval(printalgo, 1000);
+
+
+        //Define depois de quanto tempo ele executa uma função
+        setTimeout(printalgo,5000);
+
+
+
+    </script>
+</body>
+
+</html>
