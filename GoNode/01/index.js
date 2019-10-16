@@ -1,8 +1,13 @@
-const http = require("http");
+const express = require("express");
 
-http
-  .createServer((req, res) => {
-    console.log(req);
-    return res.end("eai");
-  })
-  .listen(3000);
+const app = express();
+
+app.get("/", (req, res) => {
+  console.log("Req:");
+  console.log(req);
+  console.log("Res:");
+  console.log(res);
+  return res.send("res");
+});
+
+app.listen(4000);
