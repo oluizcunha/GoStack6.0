@@ -14,18 +14,13 @@ app.set("view engine", "njk");
 
 const users = ["Luiz Cunha", "Thiago machele"];
 
-app.get("/", (req, res) => {
-  return res.render(`list`, { users });
-});
+app.get("/", (req, res) => {});
 
-app.get("/new", (req, res) => {
-  return res.render("new");
-});
+app.post("/check", (req, res, next) => {});
 
-app.post("/create", (req, res) => {
-  users.push(req.body.user);
-  return res.redirect("/");
-});
+app.get("/major", (req, res) => {});
+
+app.get("/minor", (req, res) => {});
 
 app.listen(4000);
 
