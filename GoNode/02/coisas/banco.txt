@@ -1,0 +1,2 @@
+// Migrar o banco
+npx sequelize db:migrate
