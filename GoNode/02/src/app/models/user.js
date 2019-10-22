@@ -1,11 +1,26 @@
-module.exports = (sequelize, Datatype) => {
-  const user = sequelize.define("user", {
-    name: Datatype.STRING,
-    email: Datatype.STRING,
-    avatar: Datatype.STRING,
-    password_hash: Datatype.STRING,
-    provider: Datatype.BOOLEAN
-  });
+const bcrypt = require("bcryptjs");
+
+module.exports = (sequelize, Datatypes) => {
+  const user = sequelize.define(
+    "user",
+    {
+      name: Datatypes.STRING,
+      email: Datatypes.STRING,
+      avatar: Datatypes.STRING,
+      password: Datatypes.VIRTUAL,
+      password_hash: Datatypes.STRING,
+      provider: Datatypes.BOOLEAN
+    },
+    {
+      hooks: {
+        beforeSave: async user => {
+          if (user.password) {
+            user.password_hash = await bcrypt.hash(user.password, 8);
+          }
+        }
+      }
+    }
+  );
 
   return user;
 };
