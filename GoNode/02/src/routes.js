@@ -18,6 +18,8 @@ routes.post("/signup", upload.single("avatar"), usercontroller.store);
 
 routes.use("/app", authMiddleware);
 
+routes.get("/app/logout", sessioncontroller.destroy);
+
 routes.get("/app/dashboard", (req, res) => {
   console.log(req.session.user);
   res.render("dashboard");
