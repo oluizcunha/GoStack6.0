@@ -23,6 +23,8 @@ class sessioncontroller {
       return res.redirect("/");
     }
 
+    req.session.user = user2;
+
     return res.redirect("/app/dashboard");
   }
 }
