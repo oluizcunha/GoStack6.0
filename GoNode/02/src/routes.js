@@ -11,8 +11,8 @@ const usercontroller = require("./app/controllers/usercontroller");
 const sessioncontroller = require("./app/controllers/sessioncontroller");
 
 routes.use((req, res, next) => {
-  res.locals.flashSucces = req.flash("sucesso");
-  res.locals.flashError = req.flash("Errouuu");
+  res.locals.flashSucces = req.flash("success");
+  res.locals.flashError = req.flash("error"); 
 
   return next();
 });
