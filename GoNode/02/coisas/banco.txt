@@ -1,2 +1,5 @@
+// puxando imagem docker
+docker run --name database -p 5432:5432 -d -t kartoza/postgis
+
 // Migrar o banco
 npx sequelize db:migrate
