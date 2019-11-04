@@ -10,6 +10,7 @@ const guestMiddleware = require("./app/middlewares/guest");
 const usercontroller = require("./app/controllers/usercontroller");
 const sessioncontroller = require("./app/controllers/sessioncontroller");
 const dashboardcontroller = require("./app/controllers/dashboardcontroller");
+const filecontroler = require("./app/controllers/filecontroler");
 
 routes.use((req, res, next) => {
   res.locals.flashSucces = req.flash("success");
@@ -17,6 +18,10 @@ routes.use((req, res, next) => {
 
   return next();
 });
+
+//retornando imagens do avatar
+
+routes.get("/files/:file", filecontroler.show);
 
 routes.get("/", guestMiddleware, sessioncontroller.create);
 routes.post("/signin", sessioncontroller.store);
