@@ -26,6 +26,20 @@ class App extends Component {
   handleClick = () => {
     //Não é possivel alterar valor do estado, apenas pode sobrepor com  afunção setState (replace)
     this.setState({ contador: this.state.contador + 1 });
+
+    //A alteração do state entra em fila e demora algum tempo para ser processada, por isso ele exibe o valor antigo.
+    console.log("Print antes de processar " + this.state.contador);
+
+    //Umas das formas para que ele execute obrigatoriamente depois do processamento de alterar o stado é
+    //criando uma função de callback:
+
+    this.setState({ contador: this.state.contador + 1 }, () => {
+      console.log("Print depois de processar " + this.state.contador);
+    });
+
+    // Para acessar o state que está presente na fila, deve-se atribuir em uma função (fazendo alteração instantanea)
+    this.setState(state => ({ contador: this.state.contador + 1 }));
+    console.log("Print com alteração instantanea" + contador);
   };
   // Quando o state é alterando, o render é executando. Fazendo com que atualize os dados da pagina
   render() {
