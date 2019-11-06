@@ -7,6 +7,26 @@ class App extends Component {
     contador: 1
   };
 
+  // Executado na criação do componente
+  componentDidMount() {
+    //
+  }
+
+  //Retorna true ou false, autorizando a atualização do componente(controle de performace)
+  shouldComponentUpdate(nextProps, nextState) {
+    //
+  }
+
+  // Executa apos atualização de componente
+  componentDidUpdate(prevProps, prevState) {
+    //
+  }
+
+  // Executado quando é destruido o componente
+  componentWillUnmount() {
+    //
+  }
+
   //Se não utilizarmos uma arrow funcion, o this está referenciando a função. Com isso ele não encontra os componentes da classe mae
   handleClick = () => {
     //Não é possivel alterar valor do estado, apenas pode sobrepor com  afunção setState (replace)
