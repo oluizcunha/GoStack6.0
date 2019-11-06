@@ -2,30 +2,12 @@ import React, { Component, Fragment } from "react";
 import { render } from "react-dom";
 
 import Button from "./Button";
+
+import "./style.scss";
 class App extends Component {
   state = {
     contador: 1
   };
-
-  // Executado na criação do componente
-  componentDidMount() {
-    //
-  }
-
-  //Retorna true ou false, autorizando a atualização do componente(controle de performace)
-  shouldComponentUpdate(nextProps, nextState) {
-    //
-  }
-
-  // Executa apos atualização de componente
-  componentDidUpdate(prevProps, prevState) {
-    //
-  }
-
-  // Executado quando é destruido o componente
-  componentWillUnmount() {
-    //
-  }
 
   //Se não utilizarmos uma arrow funcion, o this está referenciando a função. Com isso ele não encontra os componentes da classe mae
   handleClick = () => {
