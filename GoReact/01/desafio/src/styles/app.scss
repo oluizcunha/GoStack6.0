@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #e9ebee;
+  font-family: sans-serif;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+.header {
+  background-color: chocolate;
+  border-bottom: 1px solid darkblue;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
